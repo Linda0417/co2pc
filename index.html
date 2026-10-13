@@ -42,7 +42,6 @@
             position: relative;
             overflow-x: hidden;
         }
-
         /* 绿叶装饰元素 - 纯CSS实现，无需图片 */
         body::before, body::after {
             content: "";
@@ -53,7 +52,6 @@
             border-radius: 50%;
             z-index: -1;
         }
-
         body::before {
             top: 5%;
             left: 5%;
@@ -61,7 +59,6 @@
             transform: rotate(30deg);
             box-shadow: 0 0 20px rgba(63, 168, 122, 0.1);
         }
-
         body::after {
             bottom: 5%;
             right: 5%;
@@ -69,7 +66,6 @@
             transform: rotate(-120deg);
             box-shadow: 0 0 20px rgba(63, 168, 122, 0.1);
         }
-
         /* 小绿叶装饰 */
         .leaf-decoration {
             position: absolute;
@@ -79,45 +75,33 @@
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
             z-index: -1;
         }
-
         .leaf-1 {
             top: 20%;
             right: 10%;
             transform: rotate(60deg);
         }
-
         .leaf-2 {
             bottom: 20%;
             left: 10%;
             transform: rotate(-60deg);
         }
-
-        /* 右下角图片占位框 */
+        /* 右下角图片 */
         .image-placeholder {
             position: fixed;
             bottom: 30px;
             right: 30px;
             width: 120px;
             height: 120px;
-            border: 2px dashed #3fa87a; /* 绿色虚线边框，标识占位 */
-            border-radius: 8px;
-            background-color: rgba(255, 253, 244, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             z-index: 10;
             /* 适配移动端 */
             max-width: 100px;
             max-height: 100px;
         }
-
-        .image-placeholder p {
-            color: #6b9079;
-            font-size: 12px;
-            text-align: center;
-            line-height: 1.4;
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
-
         /* 计算器主容器 - 白色底+轻微阴影，清新感 */
         .calculator-container {
             background-color: #fffdf4;
@@ -132,7 +116,6 @@
             position: relative;
             overflow: hidden;
         }
-
         /* 容器顶部绿叶装饰 */
         .calculator-container::before {
             content: "";
@@ -143,7 +126,6 @@
             height: 6px;
             background: linear-gradient(90deg, #3fa87a, #6b9079, #3fa87a);
         }
-
         /* 标题样式 - 深绿主色，柔和不突兀 */
         .header {
             text-align: center;
@@ -153,7 +135,6 @@
             border-bottom: 2px solid #e6f4ea;
             position: relative;
         }
-
         .header::after {
             content: "";
             position: absolute;
@@ -164,7 +145,6 @@
             height: 2px;
             background-color: #3fa87a;
         }
-
         .header h1 {
             /* 深绿主色，护眼且贴合主题 */
             color: #2d7d58;
@@ -172,19 +152,16 @@
             margin-bottom: 10px;
             font-weight: 600;
         }
-
         .header .tips {
             /* 浅灰绿，不刺眼 - 字号调大 */
             color: #6b9079;
             font-size: 16px; /* 从14px调大到16px */
             line-height: 1.5;
         }
-
         /* 表单区域样式 */
         .form-section {
             margin-bottom: 25px;
         }
-
         .form-section h3 {
             /* 主绿色，突出但不刺眼 */
             color: #3fa87a;
@@ -193,18 +170,15 @@
             display: flex;
             align-items: center;
         }
-
         .form-section h3::before {
             content: "●";
             color: #3fa87a;
             margin-right: 8px;
             font-size: 14px;
         }
-
         .form-group {
             margin-bottom: 15px;
         }
-
         label {
             display: block;
             margin-bottom: 8px;
@@ -212,7 +186,6 @@
             color: #4a6e5b;
             font-size: 15px; /* 标签字号调大 */
         }
-
         input[type="number"] {
             width: 100%;
             padding: 12px 14px; /* 输入框内边距加大，更易点击 */
@@ -226,14 +199,12 @@
             /* 浅绿背景，护眼 */
             background-color: #fffffa;
         }
-
         input[type="number"]:focus {
             /* 主绿色边框+柔和阴影，聚焦反馈不刺眼 */
             border-color: #3fa87a;
             box-shadow: 0 0 0 2px rgba(63, 168, 122, 0.15);
             background-color: #ffffff;
         }
-
         /* 按钮样式 - 渐变绿，柔和且有层次感 */
         .btn-calculate {
             width: 100%;
@@ -251,7 +222,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .btn-calculate::before {
             content: "";
             position: absolute;
@@ -262,15 +232,12 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: 0.5s;
         }
-
         .btn-calculate:hover {
             background-color: #359069;
         }
-
         .btn-calculate:hover::before {
             left: 100%;
         }
-
         /* 结果展示区域 - 浅绿背景，核心护眼区 */
         .result-section {
             display: none;
@@ -282,14 +249,12 @@
             /* 轻微边框，提升质感 */
             border: 1px solid #d0e6d9;
         }
-
         .result-section h3 {
             color: #2d7d58;
             font-size: 19px; /* 结果标题调大 */
             margin-bottom: 15px;
             text-align: center;
         }
-
         .result-item {
             display: flex;
             justify-content: space-between;
@@ -298,13 +263,11 @@
             border-bottom: 1px solid #d9e9e0;
             font-size: 15px; /* 结果文字调大 */
         }
-
         .result-item.sub-item {
             font-size: 14px;
             padding-left: 15px;
             padding-right: 15px;
         }
-
         .result-item:last-child {
             border-bottom: none;
             font-weight: bold;
@@ -312,17 +275,14 @@
             font-size: 17px; /* 总计文字调大 */
             margin-top: 10px;
         }
-
         .result-label {
             color: #4a6e5b;
         }
-
         .result-value {
             /* 主绿色，突出结果但不刺眼 */
             color: #3fa87a;
             font-weight: 500;
         }
-
         /* 提示文本样式 - 浅灰绿，护眼 - 字号显著调大 */
         .hint-text {
             font-size: 15px; /* 从12px调大到15px */
@@ -331,7 +291,6 @@
             margin-bottom: 15px;
             line-height: 1.6; /* 行高加大，更易阅读 */
         }
-
         /* 移动端适配 */
         @media (max-width: 768px) {
             .image-placeholder {
@@ -340,9 +299,6 @@
                 bottom: 20px;
                 right: 20px;
             }
-            .image-placeholder p {
-                font-size: 10px;
-            }
         }
     </style>
 </head>
@@ -350,12 +306,10 @@
     <!-- 绿叶装饰元素 -->
     <div class="leaf-decoration leaf-1"></div>
     <div class="leaf-decoration leaf-2"></div>
-
-    <!-- 右下角图片占位框 -->
+    <!-- 右下角图片 -->
     <div class="image-placeholder">
-        <p>图片占位框<br/>（可添加绿叶素材）</p>
+        <img src="https://raw.githubusercontent.com/Linda0417/co2pc/main/wow.png" alt="logo">
     </div>
-
     <div class="calculator-container">
         <!-- 头部标题 -->
         <div class="header">
@@ -366,7 +320,6 @@
                 <a href="https://www.cnblogs.com/Linda0417/p/19489207" target="_blank">初始代码地址</a>
             </p>
         </div>
-
         <!-- 行程方式输入区域 -->
         <div class="form-section">
             <h3>第一步：输入各类行程距离</h3>
@@ -376,28 +329,23 @@
                 <label for="car-distance">轿车行程距离（单位：km）：</label>
                 <input type="number" id="car-distance" step="0.1" min="-1" value="0">
             </div>
-
             <div class="form-group">
                 <label for="bike-distance">自行车行程距离（单位：km）：</label>
                 <input type="number" id="bike-distance" step="0.1" min="-1" value="0">
             </div>
-
             <div class="form-group">
                 <label for="metro-distance">地铁行程距离（单位：km）：</label>
                 <input type="number" id="metro-distance" step="0.1" min="-1" value="0">
             </div>
-
             <div class="form-group">
                 <label for="new-energy-distance">新能源车行程距离（单位：km）：</label>
                 <input type="number" id="new-energy-distance" step="0.1" min="-1" value="0">
             </div>
-
             <div class="form-group">
                 <label for="bus-distance">公交行程距离（单位：km）：</label>
                 <input type="number" id="bus-distance" step="0.1" min="-1" value="0">
             </div>
         </div>
-
         <!-- 纸张使用量输入区域 -->
         <div class="form-section">
             <h3>第二步：输入纸张使用量</h3>
@@ -407,10 +355,8 @@
                 <p class="hint-text">提示：尽量输入偶数，计算更准确；请节约用纸，减少碳排放</p>
             </div>
         </div>
-
         <!-- 计算按钮 -->
         <button class="btn-calculate" onclick="calculateCarbon()">计算碳排放量</button>
-
         <!-- 结果展示区域 -->
         <div class="result-section" id="result-area">
             <h3>碳排放计算结果</h3>
@@ -454,13 +400,11 @@
             </div>
         </div>
     </div>
-
     <script>
         // 碳排放系数和默认里程数组（与原C++代码一致）
         // 索引对应：1-轿车 2-自行车 3-地铁 4-新能源车 5-公交
         const st = [0, 27, 8, 15, 17, 20];  // 碳排放系数
         const m = [0, 20, 3, 10, 20, 10];   // 默认里程
-
         // 计算碳排放量的核心函数
         function calculateCarbon() {
             // 获取各类行程距离输入
@@ -470,7 +414,6 @@
             const newEnergyDistance = parseFloat(document.getElementById('new-energy-distance').value);
             const busDistance = parseFloat(document.getElementById('bus-distance').value);
             const paperCount = parseFloat(document.getElementById('paper-count').value);
-
             // 输入验证
             const distanceInputs = [carDistance, bikeDistance, metroDistance, newEnergyDistance, busDistance];
             for (let i = 0; i < distanceInputs.length; i++) {
@@ -479,28 +422,22 @@
                     return;
                 }
             }
-
             if (isNaN(paperCount) || paperCount < 0) {
                 alert('请输入有效的纸张使用数量（非负数）！');
                 return;
             }
-
             // 计算各类行程的碳排放
             const carCarbon = calculateSingleTransportCarbon(1, carDistance);
             const bikeCarbon = calculateSingleTransportCarbon(2, bikeDistance);
             const metroCarbon = calculateSingleTransportCarbon(3, metroDistance);
             const newEnergyCarbon = calculateSingleTransportCarbon(4, newEnergyDistance);
             const busCarbon = calculateSingleTransportCarbon(5, busDistance);
-
             // 总乘车碳排放
             const totalTransportCarbon = carCarbon + bikeCarbon + metroCarbon + newEnergyCarbon + busCarbon;
-
             // 纸张碳排放计算（与原逻辑一致）
             const paperCarbon = (paperCount / 2) * 0.0016;
-
             // 总碳排放量
             const totalCarbon = totalTransportCarbon + paperCarbon + 5;
-
             // 更新结果显示
             document.getElementById('car-carbon').textContent = carCarbon.toFixed(2) + ' g';
             document.getElementById('bike-carbon').textContent = bikeCarbon.toFixed(2) + ' g';
@@ -510,14 +447,12 @@
             document.getElementById('total-transport-carbon').textContent = totalTransportCarbon.toFixed(2) + ' g';
             document.getElementById('paper-carbon').textContent = paperCarbon.toFixed(2) + ' g';
             document.getElementById('total-carbon').textContent = totalCarbon.toFixed(2) + ' g';
-
             // 显示结果区域
             document.getElementById('result-area').style.display = 'block';
             
             // 滚动到结果区域
             document.getElementById('result-area').scrollIntoView({ behavior: 'smooth' });
         }
-
         // 计算单一行程方式的碳排放
         function calculateSingleTransportCarbon(type, distance) {
             if (distance < 0) {
